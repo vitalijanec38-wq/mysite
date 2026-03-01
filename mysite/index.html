@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Anasta Production</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#111;
+color:white;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:3px;
+margin:0;
+}
+
+.hero p{
+opacity:0.6;
+}
+
+/* GALLERY */
+
+.gallery{
+position:relative;
+height:120vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.photo{
+position:absolute;
+width:300px;
+border-radius:14px;
+box-shadow:0 30px 80px rgba(0,0,0,0.6);
+transition:0.6s;
+cursor:pointer;
+}
+
+.photo:nth-child(1){transform:translate(-120px,40px);}
+.photo:nth-child(2){transform:translate(120px,60px);}
+.photo:nth-child(3){transform:translate(0,-80px);}
+
+.gallery.active .photo{
+transform:translate(0,0) scale(1.05);
+}
+
+/* INSTAGRAM */
+
+.insta{
+text-align:center;
+padding:80px 20px;
+}
+
+.insta a{
+padding:14px 30px;
+background:linear-gradient(45deg,#fd1d1d,#e1306c,#f77737);
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+<h1>ANASTA PRODUCTION</h1>
+<p>tap to reveal story</p>
+</div>
+
+<div class="gallery" onclick="this.classList.toggle('active')">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=600" class="photo">
+
+<img src="https://images.unsplash.com/photo-1603415526960-f8f0b0f68b1a?w=600" class="photo">
+
+<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600" class="photo">
+</div>
+
+<div class="insta">
+<h2>@anasta.production</h2>
+
+<a href="https://www.instagram.com/anasta.production/" target="_blank">
+Open Instagram →
+</a>
+</div>
+
+</body>
+</html>
