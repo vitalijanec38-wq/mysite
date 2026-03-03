@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anasta Portfolio</title>
+<title>ANASTA</title>
 
 <style>
+
 body{
 margin:0;
-background:#000;
+background:#0a0a0a;
+font-family:Georgia, serif;
 color:white;
-font-family:Arial, sans-serif;
 text-align:center;
 }
 
@@ -23,13 +24,12 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 cursor:pointer;
-background:radial-gradient(circle,#1a0004,#000);
 }
 
 .hero h1{
 font-size:60px;
-letter-spacing:6px;
-color:#ff1a3c;
+color:#ff2a2a;
+letter-spacing:5px;
 margin:0;
 }
 
@@ -43,55 +43,52 @@ margin-top:15px;
 .portfolio{
 display:none;
 padding:80px 20px;
+animation:fade 1s ease forwards;
+}
+
+@keyframes fade{
+from{opacity:0;}
+to{opacity:1;}
 }
 
 .gallery{
 display:flex;
 justify-content:center;
-flex-wrap:wrap;
 gap:40px;
+flex-wrap:wrap;
+margin-top:40px;
 }
 
 .gallery img{
-width:320px;
-border-radius:18px;
+width:280px;
+border-radius:15px;
 cursor:pointer;
 transition:0.4s;
+box-shadow:0 20px 60px rgba(0,0,0,0.8);
 }
 
 .gallery img:hover{
-transform:scale(1.05);
-box-shadow:0 0 80px rgba(255,0,40,0.7);
+transform:scale(1.08);
 }
 
-/* FULLSCREEN VIEW */
+/* MODAL */
 
-.viewer{
+.modal{
 display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.95);
+background:rgba(0,0,0,0.9);
 justify-content:center;
 align-items:center;
-z-index:1000;
 }
 
-.viewer img{
+.modal img{
 max-width:90%;
-max-height:90%;
-border-radius:20px;
-}
-
-.close{
-position:absolute;
-top:20px;
-right:30px;
-font-size:32px;
-cursor:pointer;
-color:white;
+max-height:80%;
+border-radius:15px;
 }
 
 /* INSTAGRAM */
@@ -101,13 +98,20 @@ margin-top:60px;
 }
 
 .insta a{
-padding:14px 40px;
-background:linear-gradient(45deg,#8b0000,#ff1a3c);
-border-radius:30px;
+display:inline-block;
+padding:14px 30px;
+background:#ff2a2a;
 color:white;
 text-decoration:none;
+border-radius:30px;
 font-weight:bold;
+transition:0.3s;
 }
+
+.insta a:hover{
+background:#cc0000;
+}
+
 </style>
 </head>
 
@@ -120,41 +124,42 @@ font-weight:bold;
 
 <div class="portfolio" id="portfolio">
 
-<h2>Model Portfolio</h2>
+<h2>Portfolio</h2>
 
 <div class="gallery">
-<img src="photo1.jpg" onclick="openImage(this.src)">
-<img src="photo2.jpg" onclick="openImage(this.src)">
+<img src="photo1.jpg" onclick="openModal(this)">
+<img src="photo2.jpg" onclick="openModal(this)">
 </div>
 
 <div class="insta">
 <h3>@anasta.production</h3>
 <a href="https://www.instagram.com/anasta.production/" target="_blank">
-Instagram →
+View Instagram →
 </a>
 </div>
 
 </div>
 
-<div class="viewer" id="viewer" onclick="closeImage()">
-<span class="close">✕</span>
-<img id="viewerImg">
+<div class="modal" id="modal" onclick="closeModal()">
+<img id="modalImg">
 </div>
 
 <script>
+
 function openPortfolio(){
-document.querySelector(".hero").style.display="none";
-document.getElementById("portfolio").style.display="block";
+document.querySelector('.hero').style.display="none";
+document.getElementById('portfolio').style.display="block";
 }
 
-function openImage(src){
-document.getElementById("viewerImg").src = src;
-document.getElementById("viewer").style.display = "flex";
+function openModal(img){
+document.getElementById('modal').style.display="flex";
+document.getElementById('modalImg').src=img.src;
 }
 
-function closeImage(){
-document.getElementById("viewer").style.display = "none";
+function closeModal(){
+document.getElementById('modal').style.display="none";
 }
+
 </script>
 
 </body>
