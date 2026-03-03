@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -8,11 +9,13 @@
 <style>
 body{
 margin:0;
-background:#0a0a0a;
-font-family:Georgia, serif;
+background:#0d0d0d;
 color:white;
+font-family:Arial, sans-serif;
 text-align:center;
 }
+
+/* HERO */
 
 .hero{
 height:100vh;
@@ -21,13 +24,14 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 cursor:pointer;
+background:radial-gradient(circle at center,#1a0004,#000);
 }
 
 .hero h1{
-font-size:60px;
-color:#ff2a2a;
-letter-spacing:5px;
+font-size:64px;
+letter-spacing:6px;
 margin:0;
+color:#ff1a3c;
 }
 
 .hero p{
@@ -35,10 +39,12 @@ opacity:0.6;
 margin-top:15px;
 }
 
+/* PORTFOLIO */
+
 .portfolio{
 display:none;
 padding:80px 20px;
-animation:fade 1s ease forwards;
+animation:fade 0.8s ease forwards;
 }
 
 @keyframes fade{
@@ -55,43 +61,62 @@ margin-top:40px;
 }
 
 .gallery img{
-width:280px;
-border-radius:15px;
+width:300px;
+border-radius:18px;
 cursor:pointer;
 transition:0.4s;
-box-shadow:0 20px 60px rgba(0,0,0,0.8);
+box-shadow:0 25px 60px rgba(0,0,0,0.8);
 }
 
 .gallery img:hover{
-transform:scale(1.08);
+transform:scale(1.07);
 }
 
-.modal{
+/* FULLSCREEN VIEW */
+
+.viewer{
 display:none;
 position:fixed;
 top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.95);
 justify-content:center;
 align-items:center;
+z-index:1000;
 }
 
-.modal img{
+.viewer img{
 max-width:90%;
-max-height:80%;
-border-radius:15px;
+max-height:85%;
+border-radius:20px;
 }
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+cursor:pointer;
+color:white;
+}
+
+/* INSTAGRAM */
 
 .insta{
-margin-top:60px;
+margin-top:70px;
+}
+
+.insta h3{
+margin-bottom:20px;
+font-weight:normal;
 }
 
 .insta a{
 display:inline-block;
-padding:14px 30px;
-background:#ff2a2a;
+padding:14px 35px;
+background:linear-gradient(45deg,#8b0000,#ff1a3c);
 color:white;
 text-decoration:none;
 border-radius:30px;
@@ -100,8 +125,9 @@ transition:0.3s;
 }
 
 .insta a:hover{
-background:#cc0000;
+transform:scale(1.05);
 }
+
 </style>
 </head>
 
@@ -117,8 +143,8 @@ background:#cc0000;
 <h2>Portfolio</h2>
 
 <div class="gallery">
-<img src="photo1.jpg" onclick="openModal(this)">
-<img src="photo2.jpg" onclick="openModal(this)">
+<img src="photo1.jpg" onclick="openImage(this.src)">
+<img src="photo2.jpg" onclick="openImage(this.src)">
 </div>
 
 <div class="insta">
@@ -130,8 +156,9 @@ View Instagram →
 
 </div>
 
-<div class="modal" id="modal" onclick="closeModal()">
-<img id="modalImg">
+<div class="viewer" id="viewer" onclick="closeImage()">
+<span class="close">✕</span>
+<img id="viewerImg">
 </div>
 
 <script>
@@ -140,13 +167,13 @@ document.querySelector('.hero').style.display="none";
 document.getElementById('portfolio').style.display="block";
 }
 
-function openModal(img){
-document.getElementById('modal').style.display="flex";
-document.getElementById('modalImg').src=img.src;
+function openImage(src){
+document.getElementById('viewerImg').src=src;
+document.getElementById('viewer').style.display="flex";
 }
 
-function closeModal(){
-document.getElementById('modal').style.display="none";
+function closeImage(){
+document.getElementById('viewer').style.display="none";
 }
 </script>
 
