@@ -2,51 +2,158 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Сайт для дочки</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anasta Portfolio</title>
 
 <style>
 body{
-    background:#ffe6f2;
-    font-family:Arial;
-    text-align:center;
-    padding-top:50px;
+margin:0;
+background:#000;
+color:white;
+font-family:Arial, sans-serif;
+text-align:center;
 }
 
-h1{
-    color:#ff4da6;
-    font-size:40px;
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+cursor:pointer;
+background:radial-gradient(circle,#1a0004,#000);
 }
 
-button{
-    padding:15px 30px;
-    font-size:20px;
-    background:#ff99cc;
-    border:none;
-    border-radius:10px;
-    cursor:pointer;
+.hero h1{
+font-size:60px;
+letter-spacing:6px;
+color:#ff1a3c;
+margin:0;
 }
 
-img{
-    margin-top:20px;
-    width:300px;
-    display:none;
+.hero p{
+opacity:0.6;
+margin-top:15px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+display:none;
+padding:80px 20px;
+}
+
+.gallery{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:40px;
+}
+
+.gallery img{
+width:320px;
+border-radius:18px;
+cursor:pointer;
+transition:0.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.05);
+box-shadow:0 0 80px rgba(255,0,40,0.7);
+}
+
+/* FULLSCREEN VIEW */
+
+.viewer{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.95);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.viewer img{
+max-width:90%;
+max-height:90%;
+border-radius:20px;
+}
+
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:32px;
+cursor:pointer;
+color:white;
+}
+
+/* INSTAGRAM */
+
+.insta{
+margin-top:60px;
+}
+
+.insta a{
+padding:14px 40px;
+background:linear-gradient(45deg,#8b0000,#ff1a3c);
+border-radius:30px;
+color:white;
+text-decoration:none;
+font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<h1>Привет, солнышко 🌸</h1>
+<div class="hero" onclick="openPortfolio()">
+<h1>ANASTA</h1>
+<p>tap to open portfolio</p>
+</div>
 
-<button onclick="show()">Нажми меня</button>
+<div class="portfolio" id="portfolio">
 
-<br>
+<h2>Model Portfolio</h2>
 
-<img id="pic" src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg">
+<div class="gallery">
+<img src="photo1.jpg" onclick="openImage(this.src)">
+<img src="photo2.jpg" onclick="openImage(this.src)">
+</div>
+
+<div class="insta">
+<h3>@anasta.production</h3>
+<a href="https://www.instagram.com/anasta.production/" target="_blank">
+Instagram →
+</a>
+</div>
+
+</div>
+
+<div class="viewer" id="viewer" onclick="closeImage()">
+<span class="close">✕</span>
+<img id="viewerImg">
+</div>
 
 <script>
-function show(){
-    document.getElementById("pic").style.display="block";
+function openPortfolio(){
+document.querySelector(".hero").style.display="none";
+document.getElementById("portfolio").style.display="block";
+}
+
+function openImage(src){
+document.getElementById("viewerImg").src = src;
+document.getElementById("viewer").style.display = "flex";
+}
+
+function closeImage(){
+document.getElementById("viewer").style.display = "none";
 }
 </script>
 
