@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anasta Production</title>
+<title>Victoria Production</title>
 
 <style>
 
 body{
 margin:0;
 font-family:Arial, sans-serif;
-background:#111;
+background:#0a0a0a;
 color:white;
-overflow-x:hidden;
+text-align:center;
 }
 
 /* HERO */
@@ -24,56 +25,83 @@ display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-text-align:center;
+cursor:pointer;
+background:radial-gradient(circle at center,#2a0000,#000);
 }
 
 .hero h1{
-font-size:48px;
-letter-spacing:3px;
+font-size:70px;
+letter-spacing:8px;
 margin:0;
+color:#ff1a1a;
 }
 
 .hero p{
 opacity:0.6;
 }
 
-/* GALLERY */
+/* PORTFOLIO */
 
-.gallery{
-position:relative;
-height:120vh;
+.portfolio{
+display:none;
+padding:80px 20px;
+}
+
+.photos{
 display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.photos img{
+width:260px;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.photos img:hover{
+transform:scale(1.05);
+}
+
+/* VIEWER */
+
+.viewer{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
 justify-content:center;
 align-items:center;
 }
 
-.photo{
-position:absolute;
-width:300px;
-border-radius:14px;
-box-shadow:0 30px 80px rgba(0,0,0,0.6);
-transition:0.6s;
-cursor:pointer;
+.viewer img{
+max-width:90%;
+max-height:90%;
 }
 
-.photo:nth-child(1){transform:translate(-120px,40px);}
-.photo:nth-child(2){transform:translate(120px,60px);}
-.photo:nth-child(3){transform:translate(0,-80px);}
-
-.gallery.active .photo{
-transform:translate(0,0) scale(1.05);
+.close{
+position:absolute;
+top:20px;
+right:30px;
+font-size:30px;
+cursor:pointer;
 }
 
 /* INSTAGRAM */
 
 .insta{
-text-align:center;
-padding:80px 20px;
+margin-top:60px;
 }
 
 .insta a{
-padding:14px 30px;
-background:linear-gradient(45deg,#fd1d1d,#e1306c,#f77737);
+padding:15px 35px;
+background:linear-gradient(45deg,#ff0000,#ff3c3c);
 border-radius:30px;
 color:white;
 text-decoration:none;
@@ -85,29 +113,53 @@ font-weight:bold;
 
 <body>
 
-<div class="hero">
-<h1>ANASTA PRODUCTION</h1>
-<p>tap to reveal story</p>
+<div class="hero" onclick="openPortfolio()">
+<h1>VICTORIA</h1>
+<p>tap to open portfolio</p>
 </div>
 
-<div class="gallery" onclick="this.classList.toggle('active')">
+<div class="portfolio" id="portfolio">
 
-<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=600" class="photo">
+<h2>Portfolio</h2>
 
-<img src="https://images.unsplash.com/photo-1603415526960-f8f0b0f68b1a?w=600" class="photo">
-
-<img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600" class="photo">
-
+<div class="photos">
+<img src="photo1.jpg" onclick="openPhoto(this)">
+<img src="photo2.jpg" onclick="openPhoto(this)">
 </div>
 
 <div class="insta">
-<h2>@anasta.production</h2>
+<h3>@victoria.production</h3>
 
-<a href="https://www.instagram.com/anasta.production/" target="_blank">
-Open Instagram →
+<a href="https://instagram.com/" target="_blank">
+View Instagram →
 </a>
+
 </div>
 
-</body>
-</h
+</div>
 
+<div class="viewer" id="viewer" onclick="closePhoto()">
+<div class="close">✕</div>
+<img id="viewer-img">
+</div>
+
+<script>
+
+function openPortfolio(){
+document.querySelector(".hero").style.display="none";
+document.getElementById("portfolio").style.display="block";
+}
+
+function openPhoto(img){
+document.getElementById("viewer").style.display="flex";
+document.getElementById("viewer-img").src=img.src;
+}
+
+function closePhoto(){
+document.getElementById("viewer").style.display="none";
+}
+
+</script>
+
+</body>
+</html>
