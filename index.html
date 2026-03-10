@@ -1,52 +1,63 @@
-
 <!DOCTYPE html>
 <html>
-
 <head>
-
-<title>My first site</title>
+<title>My Shop</title>
 
 <style>
 
 body{
-    background-color:#f2f2f2;
-    font-family: Arial;
-    text-align:center;
+font-family: Arial;
+background:#f5f5f5;
+margin:20px;
 }
 
-img{
-    width:300px;
-    border-radius:20px;
-    box-shadow:0px 5px 15px gray;
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
 }
 
-button{
-    background:#00C2E8;
-    color:white;
-    padding:10px 20px;
-    border:none;
-    border-radius:10px;
-    font-size:16px;
+.card{
+height:100px;
+border-radius:15px;
+color:white;
+font-size:20px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
+
+.women{background:#9ea4a9;}
+.men{background:#1e4fa8;}
+.beauty{background:#ff3d6e;}
+.food{background:#b08de6;}
+.baby{background:#f2b705;}
+.home{background:#ff6c00;}
+.fitness{background:#9ac1a3;}
+.accessories{background:#3c5fa8;}
 
 </style>
-
 </head>
 
 <body>
 
-<h1>My name is Vitalii</h1>
+<h2>Shop</h2>
 
-<p>I am learning HTML</p>
+<div class="grid">
 
-<h2>My wife</h2>
+<div class="card women">Women</div>
+<div class="card men">Men</div>
 
-<img src="wife.jpg">
+<div class="card beauty">Beauty</div>
+<div class="card food">Food & Drinks</div>
 
-<br><br>
+<div class="card baby">Baby</div>
+<div class="card home">Home</div>
 
-<button>Contact me</button>
+<div class="card fitness">Fitness</div>
+<div class="card accessories">Accessories</div>
+
+</div>
 
 </body>
-
 </html>
