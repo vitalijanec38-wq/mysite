@@ -1,64 +1,88 @@
+
 <!DOCTYPE html>
-<html>
-<head><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Shop</title>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Заявка</title>
 
 <style>
 
 body{
 font-family: Arial;
-background:#f5f5f5;
-margin:20px;
-}
-<a href="women.html" class="card women">Women</a>
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-}
-
-.card:hover{
-transform: scale(1.05);
-cursor:pointer;
-}
-height:100px;
-border-radius:15px;
-color:white;
-font-size:20px;
+background: linear-gradient(135deg,#4facfe,#00f2fe);
+height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
+margin:0;
 }
 
-.women{background:#9ea4a9;}
-.men{background:#1e4fa8;}
-.beauty{background:#ff3d6e;}
-.food{background:#b08de6;}
-.baby{background:#f2b705;}
-.home{background:#ff6c00;}
-.fitness{background:#9ac1a3;}
-.accessories{background:#3c5fa8;}
+.container{
+background:white;
+padding:40px;
+border-radius:15px;
+width:350px;
+box-shadow:0 20px 40px rgba(0,0,0,0.2);
+text-align:center;
+}
+
+h2{
+margin-bottom:20px;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-top:10px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
+}
+
+textarea{
+resize:none;
+height:80px;
+}
+
+button{
+width:100%;
+margin-top:15px;
+padding:12px;
+background:#4facfe;
+border:none;
+color:white;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#2c8dfc;
+}
 
 </style>
 </head>
 
 <body>
 
-<h2>Shop</h2>
+<div class="container">
 
-<div class="grid">
+<h2>Оставить заявку</h2>
 
-<div class="card women">Women</div>
-<div class="card men">Men</div>
+<form action="ТВОЙ_WEBHOOK" method="post" enctype="multipart/form-data">
 
-<div class="card beauty">Beauty</div>
-<div class="card food">Food & Drinks</div>
+<input name="name" placeholder="Ваше имя" required>
 
-<div class="card baby">Baby</div>
-<div class="card home">Home</div>
+<input name="phone" placeholder="Телефон или Telegram" required>
 
-<div class="card fitness">Fitness</div>
-<div class="card accessories">Accessories</div>
+<textarea name="text" placeholder="Ваше сообщение"></textarea>
+
+<input type="file" name="image">
+
+<button type="submit">Отправить заявку</button>
+
+</form>
 
 </div>
 
