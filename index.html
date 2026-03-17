@@ -4,104 +4,116 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Мужские костюмы Klaipėda</title>
+<title>Мужские костюмы в Клайпеде</title>
 
 <style>
 
-*{
+body{
 margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
+font-family:Arial, sans-serif;
+background:#f4f4f4;
+color:#222;
 }
 
-body{
-background:#0b0b0b;
-color:white;
-overflow-x:hidden;
+/* HEADER */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
 }
 
 /* HERO */
 
-header{
-height:100vh;
+.hero{
+height:70vh;
+background:url("https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1600") center/cover no-repeat;
 display:flex;
-flex-direction:column;
 justify-content:center;
 align-items:center;
+flex-direction:column;
 text-align:center;
+color:white;
 position:relative;
-overflow:hidden;
 }
 
-header::before{
+.hero::before{
 content:"";
 position:absolute;
-width:120%;
-height:120%;
-background-image:url("https://images.unsplash.com/photo-1593030761757-71fae45fa0e7");
-background-size:cover;
-background-position:center;
-filter:brightness(0.35);
-animation:moveBg 25s infinite alternate;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
 }
 
-@keyframes moveBg{
-0%{transform:scale(1) translateX(0);}
-100%{transform:scale(1.2) translateX(-80px);}
-}
-
-header *{
+.hero h1{
 position:relative;
-z-index:2;
+font-size:48px;
+margin:0;
 }
 
-h1{
-font-size:50px;
-margin-bottom:15px;
+.hero p{
+position:relative;
+margin-top:10px;
 }
 
-p{
-opacity:0.8;
-font-size:20px;
-}
-
-button{
-margin-top:30px;
-padding:16px 40px;
-font-size:18px;
+.btn{
+margin-top:20px;
+padding:14px 30px;
 border:none;
-border-radius:40px;
-background:#25D366;
+border-radius:30px;
+background:#22c55e;
 color:white;
+font-size:18px;
 cursor:pointer;
-transition:0.3s;
-box-shadow:0 10px 35px rgba(0,255,100,0.6);
+position:relative;
 }
 
-button:hover{
-transform:scale(1.08);
-}
+/* GALLERY */
 
-/* gallery */
-
-section{
-padding:90px 20px;
+.gallery{
+padding:80px 20px;
 text-align:center;
 }
 
-.gallery{
-max-width:1100px;
-margin:auto;
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
+max-width:1200px;
+margin:auto;
+}
+
+.card p{
+padding:10px;
+font-weight:500;
 }
 
 .card{
+background:white;
+border-radius:10px;
 overflow:hidden;
-border-radius:15px;
-transition:0.4s;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
@@ -110,78 +122,66 @@ height:320px;
 object-fit:cover;
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.05);
-box-shadow:0 20px 50px rgba(0,255,100,0.4);
+.card a{
+display:block;
+text-decoration:none;
+color:#222;
 }
 
-/* form */
+/* FEATURES */
+
+.features{
+padding:80px 20px;
+background:white;
+text-align:center;
+}
+
+.features-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:30px;
+max-width:900px;
+margin:auto;
+}
+
+/* FORM */
 
 .form{
-max-width:450px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:15px;
+padding:80px 20px;
+text-align:center;
 }
 
-input{
-padding:16px;
-border-radius:10px;
-border:none;
-font-size:16px;
+.form input{
+display:block;
+width:300px;
+max-width:90%;
+margin:10px auto;
+padding:12px;
+border-radius:6px;
+border:1px solid #ccc;
 }
+
+/* FOOTER */
 
 footer{
-padding:40px;
+background:#111;
+color:white;
 text-align:center;
-opacity:0.6;
+padding:30px;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
-bottom:25px;
-right:25px;
+bottom:20px;
+right:20px;
 background:#25D366;
+padding:14px 20px;
+border-radius:30px;
 color:white;
-padding:16px 22px;
-border-radius:50px;
+text-decoration:none;
 font-weight:bold;
-text-decoration:none;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1)}
-50%{transform:scale(1.1)}
-100%{transform:scale(1)}
-}
-
-/* popup */
-
-.popup{
-position:fixed;
-bottom:100px;
-right:25px;
-background:#1a1a1a;
-padding:20px;
-border-radius:15px;
-box-shadow:0 10px 40px rgba(0,0,0,0.6);
-display:none;
-max-width:260px;
-}
-
-.popup a{
-display:inline-block;
-margin-top:10px;
-background:#25D366;
-color:white;
-padding:10px 20px;
-border-radius:20px;
-text-decoration:none;
 }
 
 </style>
@@ -190,93 +190,106 @@ text-decoration:none;
 
 <body>
 
+ <script>
+
+async function askAI(message){
+
+const response = await fetch("/ai",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+message:message
+})
+})
+
+const data = await response.json()
+
+return data.reply
+
+}
+
+</script>   
+
 <header>
-
-<h1>Мужские костюмы в Клайпеде</h1>
-
-<p>Идеально для свадьбы, бизнеса и особых событий</p>
-
-<button onclick="scrollToForm()">Записаться на примерку</button>
-
+<div class="logo">Suit Atelier</div>
+<nav>
+<a href="#">Главная</a>
+<a href="#">Коллекция</a>
+<a href="#">Контакты</a>
+</nav>
 </header>
 
-<section>
+<section class="hero">
+<h1>Мужские костюмы в Клайпеде</h1>
+<p>Свадебные и деловые костюмы</p>
+<button class="btn">Записаться на примерку</button>
+</section>
 
-<h2>Коллекция костюмов</h2>
+<section class="gallery">
 
-<div class="gallery">
+<h2>Коллекция</h2>
+
+<p>Элегантный костюм с галстуком</p>
+
+<section class="gallery">
+
+<h2>Коллекция</h2>
+
+<div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35">
+<a href="https://wa.me/37000000000?text=Здравствуйте!%20Интересует%20классический%20зелёный%20костюм">
+<img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0?w=800">
+<p>Классический зелёный костюм</p>
+</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1593030103066-0093718efeb9">
+<a href="https://wa.me/37000000000?text=Здравствуйте!%20Интересует%20тёмно-синий%20костюм">
+<img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?w=800">
+<p>Тёмно-синий деловой костюм</p>
+</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1520975922284-4b8f1c03b7f6">
+<a href="https://wa.me/37000000000?text=Здравствуйте!%20Интересует%20чёрный%20костюм">
+<img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=800">
+<p>Чёрный костюм для свадьбы</p>
+</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1593030761757-71fae45fa0e7">
+<a href="https://wa.me/37000000000?text=Здравствуйте!%20Интересует%20костюм%20с%20галстуком">
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800">
+<p>Элегантный костюм с галстуком</p>
+</a>
 </div>
 
 </div>
 
 </section>
 
-<section id="form">
+<section class="form">
 
 <h2>Записаться на примерку</h2>
-
-<div class="form">
 
 <input placeholder="Ваше имя">
 <input placeholder="Телефон">
 <input type="date">
 
-</div>
+<button class="btn">Отправить</button>
 
 </section>
 
 <footer>
-Gentleman Suits Klaipėda
+<p>© 2026 Мужские костюмы — Клайпеда</p>
 </footer>
 
-<!-- WhatsApp popup -->
-
-<div class="popup" id="popup">
-
-<p>Здравствуйте 👋  
-Нужна помощь с выбором костюма?</p>
-
-<a href="https://wa.me/37060000000?text=Здравствуйте%20хочу%20примерить%20костюм">
+<a class="whatsapp" href="https://wa.me/37000000000?text=Здравствуйте!%20Мне%20нужен%20костюм">
 Написать в WhatsApp
 </a>
-
-</div>
-
-<!-- floating whatsapp -->
-
-<a class="whatsapp"
-href="https://wa.me/37060000000?text=Здравствуйте%20хочу%20примерить%20костюм">
-WhatsApp
-</a>
-
-<script>
-
-function scrollToForm(){
-document.getElementById("form").scrollIntoView({
-behavior:"smooth"
-})
-}
-
-setTimeout(()=>{
-document.getElementById("popup").style.display="block"
-},6000)
-
-</script>
 
 </body>
 </html>
