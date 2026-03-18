@@ -221,10 +221,20 @@ return data.reply
 </nav>
 </header>
 
-<section class="hero">
-<h1>Мужские костюмы в Клайпеде</h1>
-<p>Свадебные и деловые костюмы</p>
-<button class="btn">Записаться на примерку</button>
+<section class="form">
+
+<h2>Записаться на примерку</h2>
+
+<form action="ТВОЙ_WEBHOOK_ИЗ_MAKE" method="POST">
+
+<input name="name" placeholder="Ваше имя" required>
+<input name="phone" placeholder="Телефон" required>
+<input name="date" type="date" required>
+
+<button class="btn" type="submit">Отправить</button>
+
+</form>
+
 </section>
 
 <section class="gallery">
