@@ -1,193 +1,231 @@
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suit Atelier</title>
+<title>Suit Shop</title>
 
 <style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0f0f0f;
-color:white;
-text-align:center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #000;
 }
 
 /* HEADER */
-
-.header{
-padding:30px 20px;
-}
-
-.header h1{
-font-size:42px;
-margin:0;
-}
-
-.header p{
-color:#aaa;
-margin-top:10px;
-}
-
-.highlight{
-color:#25D366;
-font-weight:bold;
-}
-
-.urgent{
-color:#ff4444;
-margin-top:10px;
+.header {
+  background: #000;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 /* GRID */
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:20px;
-padding:20px;
-max-width:1100px;
-margin:auto;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  padding: 30px;
 }
 
-.card{
-background:#1a1a1a;
-border-radius:12px;
-overflow:hidden;
-cursor:pointer;
-transition:0.3s;
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  transition: 0.3s;
 }
 
-.card:hover{
-transform:scale(1.05);
+.card:hover {
+  transform: translateY(-8px);
 }
 
-.card img{
-width:100%;
-height:320px;
-object-fit:cover;
+/* IMAGE */
+.img-box {
+  height: 300px;
+  overflow: hidden;
 }
 
-.card p{
-margin:10px 0;
+.img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
 }
 
-.price{
-color:#25D366;
-font-weight:bold;
+.card:hover img {
+  transform: scale(1.08);
 }
 
-/* MODAL */
-
-.modal{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.95);
-justify-content:center;
-align-items:center;
-flex-direction:column;
+/* INFO */
+.info {
+  padding: 15px;
+  text-align: center;
 }
 
-.modal img{
-width:90%;
-max-width:400px;
-border-radius:12px;
+.title {
+  font-size: 18px;
+  margin: 5px 0;
 }
 
-.btn{
-margin-top:20px;
-padding:15px 30px;
-background:#25D366;
-border:none;
-border-radius:10px;
-color:white;
-font-size:18px;
-cursor:pointer;
-text-decoration:none;
+.desc {
+  font-size: 13px;
+  color: #777;
 }
 
-.close{
-margin-top:15px;
-cursor:pointer;
-color:#aaa;
+/* COLORS */
+.colors {
+  margin: 10px 0;
 }
 
+.dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.dot:hover {
+  transform: scale(1.3);
+}
+
+.dot.active {
+  border: 2px solid #000;
+}
+
+/* BOTTOM */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.buy {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  background: #00c853;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buy:hover {
+  background: #00a844;
+}
+
+/* CART */
+.cart {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  background: #00c853;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+}
 </style>
-
 </head>
 
 <body>
-link.href="https://wa.me/370987352916?text=I%20want%20blue%20suit"
-<h1>Look Like a Man</h1>
-<p>Perfect suit. Perfect fit.</p>
-<p class="highlight">Ready in 24 hours</p>
-<p class="urgent">Only a few slots left this week</p>
-</div>
 
-<div class="grid">
+<div class="header">Suit Store</div>
+<div class="cart">Cart: <span id="cartCount">0</span></div>
 
-<div class="card" onclick="openModal('blue')">
-<img src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?w=800">
-<p>Тёмно-синий костюм</p>
-<p class="price">€120</p>
-</div>
+<div class="container">
 
-<div class="card" onclick="openModal('black')">
-<img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=800">
-<p>Чёрный костюм</p>
-<p class="price">€140</p>
-</div>
+  <!-- CARD 1 -->
+  <div class="card">
+    <div class="img-box">
+      <img src="black.jpg">
+    </div>
 
-<div class="card" onclick="openModal('classic')">
-<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800">
-<p>Классический костюм</p>
-<p class="price">€130</p>
-</div>
+    <div class="info">
+      <div class="title">Classic Suit</div>
+      <div class="desc">Slim fit • Elegant</div>
 
-</div>
+      <div class="colors">
+        <span class="dot active" data-img="black.jpg" style="background:black"></span>
+        <span class="dot" data-img="gray.jpg" style="background:gray"></span>
+        <span class="dot" data-img="navy.jpg" style="background:navy"></span>
+      </div>
 
-<div id="modal" class="modal">
-<img id="modalImg">
-<a id="waLink" class="btn" target="_blank">Get this suit now</a>
-<div class="close" onclick="closeModal()">Закрыть</div>
+      <div class="bottom">
+        <span class="price">$129</span>
+        <button class="buy">Buy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARD 2 -->
+  <div class="card">
+    <div class="img-box">
+      <img src="gray.jpg">
+    </div>
+
+    <div class="info">
+      <div class="title">Business Suit</div>
+      <div class="desc">Office style</div>
+
+      <div class="colors">
+        <span class="dot active" data-img="gray.jpg" style="background:gray"></span>
+        <span class="dot" data-img="black.jpg" style="background:black"></span>
+      </div>
+
+      <div class="bottom">
+        <span class="price">$149</span>
+        <button class="buy">Buy</button>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <script>
+/* смена цвета */
+document.querySelectorAll(".card").forEach(card => {
+  const img = card.querySelector("img");
+  const dots = card.querySelectorAll(".dot");
 
-function openModal(type){
+  dots.forEach(dot => {
+    dot.addEventListener("click", () => {
+      img.style.opacity = 0;
 
-let img = document.getElementById("modalImg")
-let link = document.getElementById("waLink")
+      setTimeout(() => {
+        img.src = dot.dataset.img;
+        img.style.opacity = 1;
+      }, 150);
 
-if(type==="blue"){
-img.src="https://images.unsplash.com/photo-1610652492500-ded49ceeb378?w=800"
-link.href="https://wa.me/370XXXXXXXXX?text=I%20want%20blue%20suit"
-}
+      dots.forEach(d => d.classList.remove("active"));
+      dot.classList.add("active");
+    });
+  });
+});
 
-if(type==="black"){
-img.src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?w=800"
-link.href="https://wa.me/370XXXXXXXXX?text=I%20want%20black%20suit"
-}
+/* корзина */
+let count = 0;
+const cart = document.getElementById("cartCount");
 
-if(type==="classic"){
-img.src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800"
-link.href="https://wa.me/370987352916?text=I%20want%20blue%20suit"
-}
-
-document.getElementById("modal").style.display="flex"
-}
-
-function closeModal(){
-document.getElementById("modal").style.display="none"
-}
-
+document.querySelectorAll(".buy").forEach(btn => {
+  btn.addEventListener("click", () => {
+    count++;
+    cart.textContent = count;
+  });
+});
 </script>
 
 </body>
