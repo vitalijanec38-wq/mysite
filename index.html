@@ -10,7 +10,7 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, sans-serif;
 color:white;
 }
 
@@ -31,7 +31,7 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,0.7);
 
 display:flex;
 flex-direction:column;
@@ -44,7 +44,7 @@ padding:20px;
 /* текст */
 
 h1{
-font-size:36px;
+font-size:34px;
 margin-bottom:10px;
 }
 
@@ -52,6 +52,17 @@ p{
 font-size:18px;
 color:#ddd;
 margin:5px 0;
+}
+
+/* номер */
+
+.phone{
+margin-top:15px;
+padding:10px 20px;
+border-radius:30px;
+background:rgba(255,255,255,0.1);
+font-weight:bold;
+backdrop-filter:blur(5px);
 }
 
 /* кнопка */
@@ -62,7 +73,7 @@ padding:16px 30px;
 font-size:18px;
 border:none;
 border-radius:30px;
-background:#25D366;
+background:#229ED9;
 color:white;
 cursor:pointer;
 text-decoration:none;
@@ -81,60 +92,15 @@ margin-top:15px;
 font-weight:bold;
 }
 
-/* маршрут */
+/* иконки */
 
-.route{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-}
-
-.pointA{
-position:absolute;
-top:20px;
-left:20px;
-font-weight:bold;
-}
-
-.pointB{
+.features{
 position:absolute;
 bottom:20px;
-right:20px;
-font-weight:bold;
-}
-
-.line{
-position:absolute;
-width:100%;
-height:100%;
-}
-
-.line line{
-stroke:white;
-stroke-width:3;
-stroke-dasharray:10,10;
-}
-
-/* машина */
-
-.car{
-position:absolute;
-font-size:26px;
-animation:moveCar 5s linear infinite;
-}
-
-@keyframes moveCar{
-0%{
-top:10%;
-left:10%;
-}
-100%{
-top:85%;
-left:85%;
-}
+display:flex;
+gap:20px;
+font-size:14px;
+opacity:0.8;
 }
 
 </style>
@@ -153,27 +119,22 @@ left:85%;
 
 <p>Mitsubishi Grandis — комфортная поездка</p>
 
+<div class="phone">
+📞 +370 619 10045
+</div>
+
 <p class="urgent">Ближайшая поездка скоро — уточняйте места</p>
 
-<a href="https://wa.me/370XXXXXXXXX" target="_blank" class="btn">
-Написать в WhatsApp
+<a href="https://t.me/USERNAME" target="_blank" class="btn">
+✈️ Написать в Telegram
 </a>
 
 </div>
 
-<!-- маршрут -->
-
-<div class="route">
-
-<div class="pointA">A — Klaipėda</div>
-<div class="pointB">B — Warsaw</div>
-
-<svg class="line">
-  <line x1="10%" y1="10%" x2="90%" y2="90%" />
-</svg>
-
-<div class="car">🚗</div>
-
+<div class="features">
+<span>❄️ Кондиционер</span>
+<span>🪑 Удобные места</span>
+<span>⏱ Быстро</span>
 </div>
 
 </div>
