@@ -1,155 +1,182 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Suit Shop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Поездки в Варшаву</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+
+body{
+margin:0;
+font-family:Arial;
+color:white;
 }
 
-/* КАРТОЧКА */
-.product-card {
-  width: 300px;
-  background: #1a1a1a;
-  border-radius: 16px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: 0.3s;
+/* ФОН */
+
+.bg{
+background:url("car.jpg") no-repeat center center;
+background-size:cover;
+height:100vh;
+position:relative;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
+/* затемнение */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
-/* ФОТО */
-.image-wrapper {
-  overflow: hidden;
-  border-radius: 12px;
+/* текст */
+
+h1{
+font-size:36px;
+margin-bottom:10px;
 }
 
-.image-wrapper img {
-  width: 100%;
-  transition: 0.3s ease;
+p{
+font-size:18px;
+color:#ddd;
+margin:5px 0;
 }
 
-.product-card:hover img {
-  transform: scale(1.05);
+/* кнопка */
+
+.btn{
+margin-top:20px;
+padding:16px 30px;
+font-size:18px;
+border:none;
+border-radius:30px;
+background:#25D366;
+color:white;
+cursor:pointer;
+text-decoration:none;
+transition:0.3s;
 }
 
-/* ТЕКСТ */
-.title {
-  color: white;
-  margin: 12px 0 5px;
-  font-size: 18px;
+.btn:hover{
+transform:scale(1.08);
 }
 
-.price {
-  color: #aaa;
-  margin-bottom: 10px;
+/* срочность */
+
+.urgent{
+color:#ff4444;
+margin-top:15px;
+font-weight:bold;
 }
 
-/* ЦВЕТА */
-.colors {
-  margin: 10px 0;
+/* маршрут */
+
+.route{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
 }
 
-.color {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  margin: 5px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: 0.2s;
+.pointA{
+position:absolute;
+top:20px;
+left:20px;
+font-weight:bold;
 }
 
-.color:hover {
-  transform: scale(1.2);
+.pointB{
+position:absolute;
+bottom:20px;
+right:20px;
+font-weight:bold;
 }
 
-.color.active {
-  border: 2px solid white;
+.line{
+position:absolute;
+width:100%;
+height:100%;
 }
 
-.more {
-  color: #aaa;
-  font-size: 12px;
-  margin-left: 5px;
+.line line{
+stroke:white;
+stroke-width:3;
+stroke-dasharray:10,10;
 }
 
-/* КНОПКА */
-.btn {
-  margin-top: 12px;
-  padding: 12px;
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(45deg, #00c853, #64dd17);
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s;
+/* машина */
+
+.car{
+position:absolute;
+font-size:26px;
+animation:moveCar 5s linear infinite;
 }
 
-.btn:hover {
-  opacity: 0.9;
+@keyframes moveCar{
+0%{
+top:10%;
+left:10%;
 }
+100%{
+top:85%;
+left:85%;
+}
+}
+
 </style>
+
 </head>
 
 <body>
 
-<div class="product-card">
-  <div class="image-wrapper">
-    <img id="mainImage" src="https://images.unsplash.com/photo-1593032465171-8c38a2c21a45" alt="Suit">
-  </div>
+<div class="bg">
 
-  <div class="title">Classic Suit</div>
-  <div class="price">$129</div>
+<div class="overlay">
 
-  <div class="colors">
-    <span class="color active" data-img="https://images.unsplash.com/photo-1593032465171-8c38a2c21a45" style="background:black"></span>
-    
-    <span class="color" data-img="https://images.unsplash.com/photo-1520975922284-9c8d5c1d2b27" style="background:gray"></span>
-    
-    <span class="color" data-img="https://images.unsplash.com/photo-1520975922284-9c8d5c1d2b27" style="background:navy"></span>
+<h1>Поездки в Варшаву на загранпаспорт</h1>
 
-    <span class="more">+2</span>
-  </div>
+<p>Клайпеда → Варшава → обратно</p>
 
-  <button class="btn">Get this suit</button>
+<p>Mitsubishi Grandis — комфортная поездка</p>
+
+<p class="urgent">Ближайшая поездка скоро — уточняйте места</p>
+
+<a href="https://wa.me/370XXXXXXXXX" target="_blank" class="btn">
+Написать в WhatsApp
+</a>
+
 </div>
 
-<script>
-const colors = document.querySelectorAll(".color");
-const mainImage = document.getElementById("mainImage");
+<!-- маршрут -->
 
-colors.forEach(color => {
-  color.addEventListener("click", () => {
+<div class="route">
 
-    mainImage.style.opacity = 0;
+<div class="pointA">A — Klaipėda</div>
+<div class="pointB">B — Warsaw</div>
 
-    setTimeout(() => {
-      mainImage.src = color.dataset.img;
-      mainImage.style.opacity = 1;
-    }, 150);
+<svg class="line">
+  <line x1="10%" y1="10%" x2="90%" y2="90%" />
+</svg>
 
-    colors.forEach(c => c.classList.remove("active"));
-    color.classList.add("active");
-  });
-});
-</script>
+<div class="car">🚗</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
