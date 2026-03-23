@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -13,8 +12,82 @@ body {
     color: white;
 }
 
-/* главный экран */
 .hero {
     height: 100vh;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    background: url("grandis.jpg") no-repeat center;
+    background-size: cover;
+}
+
+/* затемнение */
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+/* контент поверх */
+.hero-content {
+    position: relative;
+}
+
+/* кнопка */
+.btn {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: #2AABEE;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/* блок справа */
+.info-box {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    background: rgba(0,0,0,0.5);
+    padding: 15px 20px;
+    border-radius: 12px;
+    
+    font-size: 14px;
+    line-height: 1.6;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="hero">
+    
+    <div class="hero-content">
+        <h1>Поездки в Варшаву</h1>
+        <p>Клайпеда → Варшава → обратно</p>
+        <a href="https://t.me/ТВОЙ_ЮЗЕР" class="btn">
+            Написать в Telegram
+        </a>
+    </div>
+
+    <div class="info-box">
+        📅 Вт / Пт<br>
+        ⏱ Быстро<br>
+        📍 Клайпеда → Варшава<br>
+        💺 Осталось 2 места
+    </div>
+
+</div>
+
+</body>
+</html>
