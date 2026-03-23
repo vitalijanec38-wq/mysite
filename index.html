@@ -8,21 +8,21 @@
 
 <style>
 body {
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0b0b0b;
-  color:white;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: white;
 }
 
 /* HERO */
 .hero {
-  height:100vh;
-  background:url("grandis.jpg") center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
+  height: 100vh;
+  background: url("grandis.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
 }
 
 .hero::before {
@@ -30,69 +30,89 @@ body {
   position:absolute;
   width:100%;
   height:100%;
-  background:linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.9));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
 }
 
 .hero-content {
-  position:relative;
-  max-width:600px;
+  position: relative;
+  max-width: 600px;
 }
 
 h1 {
-  font-size:38px;
-  margin-bottom:10px;
+  font-size: 42px;
+  margin: 0;
 }
 
-p {
-  opacity:0.8;
-}
-
-/* КНОПКА */
 .btn {
-  margin-top:20px;
-  padding:15px 30px;
-  border-radius:30px;
-  background:#2AABEE;
-  text-decoration:none;
-  color:white;
-  display:inline-block;
-  transition:0.3s;
+  margin-top: 20px;
+  padding: 15px 35px;
+  border-radius: 30px;
+  background: linear-gradient(45deg,#2AABEE,#00c6ff);
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  transform:scale(1.05);
+  transform: scale(1.1);
 }
 
 /* СЕКЦИИ */
 .section {
-  padding:70px 20px;
-  text-align:center;
+  padding: 80px 20px;
+  text-align: center;
 }
 
-.section h2 {
-  margin-bottom:20px;
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 /* КАРТОЧКИ */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-  gap:20px;
-  max-width:1000px;
-  margin:auto;
-}
-
 .card {
-  background:#151515;
-  padding:25px;
-  border-radius:15px;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* FOOTER */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* ПЛАВНОЕ ПОЯВЛЕНИЕ */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ФУТЕР */
 .footer {
-  text-align:center;
-  padding:40px;
-  opacity:0.6;
+  text-align: center;
+  padding: 40px;
+  opacity: 0.5;
 }
 </style>
 </head>
@@ -104,49 +124,68 @@ p {
   <div class="hero-content">
     <h1>Поездки в Варшаву</h1>
     <p>Клайпеда → Варшава → обратно</p>
-    <a href="https://t.me/ТВОЙ_ЮЗЕР" class="btn">Написать в Telegram</a>
+    <a href="https://t.me/yourusername" class="btn">Написать</a>
   </div>
 </div>
 
-<!-- КАК ЭТО РАБОТАЕТ -->
-<div class="section">
-  <h2>Как проходит поездка</h2>
+<!-- ПОЕЗДКИ -->
+<div class="section fade">
+  <h2>Ближайшие поездки</h2>
+
   <div class="grid">
-    <div class="card">🚗 Забираем в Клайпеде</div>
-    <div class="card">📍 Едем напрямую</div>
-    <div class="card">📄 Помогаем с документами</div>
+
+    <div class="card">
+      <img src="grandis.jpg">
+      <div class="card-content">
+        <h3>Вторник</h3>
+        <p>Клайпеда → Варшава</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="grandis.jpg">
+      <div class="card-content">
+        <h3>Пятница</h3>
+        <p>Варшава → Клайпеда</p>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<!-- РАСПИСАНИЕ -->
-<div class="section">
-  <h2>Расписание</h2>
-  <div class="grid">
-    <div class="card">Вторник — Клайпеда → Варшава</div>
-    <div class="card">Пятница — Варшава → Клайпеда</div>
-  </div>
-</div>
-
-<!-- ПОЧЕМУ МЫ -->
-<div class="section">
+<!-- ПРЕИМУЩЕСТВА -->
+<div class="section fade">
   <h2>Почему выбирают нас</h2>
+
   <div class="grid">
-    <div class="card">⚡ Быстро и без пересадок</div>
-    <div class="card">🚗 Комфортный автомобиль</div>
-    <div class="card">🕒 Чёткое время выезда</div>
+    <div class="card"><div class="card-content">⚡ Быстро и напрямую</div></div>
+    <div class="card"><div class="card-content">🚗 Комфортный автомобиль</div></div>
+    <div class="card"><div class="card-content">📄 Помощь с документами</div></div>
   </div>
 </div>
 
-<!-- КОНТАКТЫ -->
-<div class="section">
+<!-- КОНТАКТ -->
+<div class="section fade">
   <h2>Контакты</h2>
   <p>📞 +370 619 10045</p>
-  <p>📍 Клайпеда</p>
 </div>
 
 <div class="footer">
-  © 2026 Поездки в Варшаву
+  © 2026 Поездки
 </div>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
