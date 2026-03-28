@@ -4,20 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Поездки в Варшаву</title>
+<title>Поездки Клайпеда — Варшава</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: black;
+  background: #0b0f1a;
   color: white;
 }
 
-/* HERO С ТВОЕЙ МАШИНОЙ */
+/* HERO */
 .hero {
   height: 100vh;
-  background: url('car.jpg') no-repeat center/cover;
+  background: url('car.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,50 +25,51 @@ body {
   position: relative;
 }
 
-.hero::after {
+.hero::before {
   content: "";
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(0,0,0,0.65);
-  top: 0;
-  left: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  animation: fadeIn 1.5s ease;
+  max-width: 600px;
 }
 
-h1 {
-  font-size: 42px;
+.hero h1 {
+  font-size: 46px;
   margin-bottom: 10px;
 }
 
-p {
+.hero p {
   opacity: 0.9;
 }
 
-/* КНОПКА ВАУ */
+/* КНОПКИ */
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 15px 35px;
+  margin-top: 15px;
+  padding: 15px 30px;
   border-radius: 30px;
-  background: linear-gradient(45deg, #00c6ff, #0072ff);
-  color: white;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 0 25px rgba(0,150,255,0.7);
-  transition: 0.3s;
+}
+
+.telegram {
+  background: linear-gradient(45deg,#2AABEE,#0088cc);
+}
+
+.whatsapp {
+  background: #25D366;
 }
 
 .btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* БЛОКИ */
+/* СЕКЦИИ */
 .section {
   padding: 60px 20px;
   text-align: center;
@@ -76,65 +77,96 @@ p {
 
 .grid {
   display: flex;
-  justify-content: center;
   gap: 20px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .card {
   background: rgba(255,255,255,0.05);
-  padding: 15px 25px;
-  border-radius: 20px;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
+  padding: 20px;
+  border-radius: 15px;
+  min-width: 250px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+/* ФОТО */
+.gallery {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* АНИМАЦИЯ */
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(20px);}
-  to {opacity: 1; transform: translateY(0);}
+.gallery img {
+  width: 300px;
+  border-radius: 15px;
+}
+
+/* ФИКС КНОПКА */
+.fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
 }
 </style>
 
 </head>
-
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-content">
-    <h1>Поездки в Варшаву</h1>
-    <p>Клайпеда → Варшава → обратно</p>
-    <p>Без пересадок • Помогаем с документами • 120 €</p>
-
-    <a href="https://t.me/ТВОЙ_НИК" class="btn">Написать в Telegram</a>
+    <h1>Поездки Клайпеда → Варшава</h1>
+    <p>Без пересадок • 6–7 часов • от 50€</p>
+    
+    <a href="https://t.me/USERNAME" class="btn telegram">Telegram</a>
+    <a href="https://wa.me/370XXXXXXXX" class="btn whatsapp">WhatsApp</a>
   </div>
 </div>
 
+<!-- ФОТО -->
+<div class="section">
+  <h2>Наш автомобиль</h2>
+  <div class="gallery">
+    <img src="car.jpg">
+    <img src="salon.jpg">
+    <img src="road.jpg">
+  </div>
+</div>
+
+<!-- РАСПИСАНИЕ -->
 <div class="section">
   <h2>Ближайшие поездки</h2>
   <div class="grid">
-    <div class="card">Вторник — Клайпеда → Варшава</div>
-    <div class="card">Пятница — Варшава → Клайпеда</div>
+    <div class="card">🚐 Вторник — Клайпеда → Варшава</div>
+    <div class="card">🚐 Пятница — Варшава → Клайпеда</div>
   </div>
 </div>
 
+<!-- ПЛЮСЫ -->
 <div class="section">
   <h2>Почему выбирают нас</h2>
   <div class="grid">
-    <div class="card">⚡ Быстро и без пересадок</div>
-    <div class="card">🚗 Комфортный автомобиль</div>
-    <div class="card">🕒 Чёткое время выезда</div>
+    <div class="card">⚡ Без пересадок</div>
+    <div class="card">🚗 Комфортный авто</div>
+    <div class="card">🕒 Точное время</div>
   </div>
 </div>
 
+<!-- ДОВЕРИЕ -->
 <div class="section">
   <h2>О нас</h2>
-  <p>100+ поездок • Реальные клиенты • Надёжно</p>
+  <p>100+ поездок • Реальные клиенты • Работаем стабильно</p>
 </div>
+
+<!-- ФИКС КНОПКА -->
+<a href="https://wa.me/370XXXXXXXX" class="fixed-btn">💬</a>
 
 </body>
 </html>
