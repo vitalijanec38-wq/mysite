@@ -4,20 +4,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Поездки Клайпеда — Варшава</title>
+<title>Поездки в Варшаву</title>
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #0b0f1a;
+  background: black;
   color: white;
 }
 
 /* HERO */
 .hero {
   height: 100vh;
-  background: url('car.jpg') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,136 +25,114 @@ body {
   position: relative;
 }
 
-.hero::before {
+.hero::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 600px;
 }
 
-.hero h1 {
-  font-size: 46px;
+h1 {
+  font-size: 40px;
   margin-bottom: 10px;
 }
 
-.hero p {
-  opacity: 0.9;
+p {
+  opacity: 0.8;
 }
 
-/* КНОПКИ */
 .btn {
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 15px 30px;
-  border-radius: 30px;
+  background: #00c2ff;
+  color: white;
   text-decoration: none;
+  border-radius: 30px;
   font-weight: bold;
-}
-
-.telegram {
-  background: linear-gradient(45deg,#2AABEE,#0088cc);
-}
-
-.whatsapp {
-  background: #25D366;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  background: #009ed1;
 }
 
-/* СЕКЦИИ */
+/* SECTION */
 .section {
   padding: 60px 20px;
   text-align: center;
 }
 
-.grid {
+.cards {
   display: flex;
-  gap: 20px;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  padding: 20px;
-  border-radius: 15px;
-  min-width: 250px;
+  background: #111;
+  padding: 15px 25px;
+  border-radius: 20px;
+  opacity: 0.9;
 }
 
-/* ФОТО */
-.gallery {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.gallery img {
-  width: 300px;
-  border-radius: 15px;
-}
-
-/* ФИКС КНОПКА */
-.fixed-btn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 15px;
-  border-radius: 50%;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.5;
 }
 </style>
-
 </head>
+
 <body>
 
-<!-- HERO -->
-<div class="hero">
+<!-- ГЛАВНЫЙ ЭКРАН -->
+<section class="hero">
   <div class="hero-content">
-    <h1>Поездки Клайпеда → Варшава</h1>
-    <p>Без пересадок • 6–7 часов • 120€</p>
-    
-    <a href="https://t.me/USERNAME" class="btn telegram">Telegram</a>
-    <a href="https://wa.me/370XXXXXXXX" class="btn whatsapp">WhatsApp</a>
+    <h1>Поездки в Варшаву</h1>
+    <p>Клайпеда → Варшава → обратно</p>
+
+    <p style="color:#ffcc00;">🔥 Осталось 3 места</p>
+
+    <a href="https://t.me/ТВОЯ_ССЫЛКА" target="_blank" class="btn">
+      Забронировать в Telegram
+    </a>
   </div>
-</div>
+</section>
 
-<!-- ФОТО -->
-
-
-<!-- РАСПИСАНИЕ -->
-<div class="section">
+<!-- БЛИЖАЙШИЕ ПОЕЗДКИ -->
+<section class="section">
   <h2>Ближайшие поездки</h2>
-  <div class="grid">
-    <div class="card"> Вторник — Клайпеда → Варшава</div>
-    <div class="card"> Пятница — Варшава → Клайпеда</div>
+  <div class="cards">
+    <div class="card">Вторник — Клайпеда → Варшава</div>
+    <div class="card">Пятница — Варшава → Клайпеда</div>
   </div>
-</div>
+</section>
 
-<!-- ПЛЮСЫ -->
-<div class="section">
+<!-- ПРИЧИНЫ -->
+<section class="section">
   <h2>Почему выбирают нас</h2>
-  <div class="grid">
-    <div class="card"> Без пересадок</div>
-    <div class="card"> Комфортный авто</div>
-    <div class="card"> Точное время</div>
+  <div class="cards">
+    <div class="card">⚡ Быстро и без пересадок</div>
+    <div class="card">🚐 Комфортный автомобиль</div>
+    <div class="card">⏰ Чёткое время выезда</div>
   </div>
+</section>
+
+<!-- ФУТЕР -->
+<div class="footer">
+  © 2026 Поездки в Варшаву
 </div>
-
-
-<!-- ФИКС КНОПКА -->
-<a href="https://wa.me/37063666841" class="fixed-btn">💬</a>
 
 </body>
 </html>
