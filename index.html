@@ -2,166 +2,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WindowCare Klaipeda | Window & Door Experts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WindowCare Klaipeda | Window & Door Repair</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f8fc;
-            color: #172b4d;
-        }
+body {
+  font-family: Arial, sans-serif;
+  color: #243447;
+  background: #f4f7fa;
+  line-height: 1.6;
+}
 
-        header {
-            background: #102b46;
-            color: white;
-            padding: 25px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header {
+  background: #102d46;
+  color: white;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
 
-        header h2 {
-            font-size: 25px;
-        }
+header h2 {
+  font-size: 25px;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-        }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+}
 
-        .hero {
-            min-height: 500px;
-            padding: 120px 8%;
-            background: linear-gradient(120deg, #102b46, #2878a8);
-            color: white;
-        }
+.hero {
+  background: #123c59;
+  color: white;
+  text-align: center;
+  padding: 55px 8%;
+}
 
-        .hero h1 {
-            font-size: 48px;
-            max-width: 650px;
-            margin-bottom: 20px;
-        }
+.hero img {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 480px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 0 auto 30px;
+}
 
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 35px;
-        }
+.hero h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
 
-        .button {
-            display: inline-block;
-            background: #ffb547;
-            color: #102b46;
-            padding: 16px 30px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+.hero p {
+  font-size: 19px;
+  margin-bottom: 25px;
+}
 
-        .services {
-            padding: 70px 8%;
-            text-align: center;
-        }
+.button {
+  display: inline-block;
+  background: #f5a623;
+  color: #172b3a;
+  padding: 13px 25px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-        .services h2 {
-            font-size: 34px;
-            margin-bottom: 35px;
-        }
+section {
+  padding: 60px 8%;
+}
 
-        .cards {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+.section-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 35px;
+}
 
-        .card {
-            background: white;
-            padding: 35px;
-            border-radius: 12px;
-            flex: 1;
-            min-width: 220px;
-            box-shadow: 0 5px 20px #00000010;
-        }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
+}
 
-        .card h3 {
-            margin-bottom: 15px;
-            color: #2878a8;
-        }
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px #00000010;
+}
 
-        footer {
-            background: #102b46;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.card h3 {
+  color: #145078;
+  margin-bottom: 12px;
+}
 
-        @media (max-width: 600px) {
-            header {
-                flex-direction: column;
-                gap: 20px;
-            }
+.about {
+  background: white;
+  text-align: center;
+}
 
-            nav a {
-                margin: 0 8px;
-            }
+.contact {
+  text-align: center;
+  background: #e6eef4;
+}
 
-            .hero h1 {
-                font-size: 34px;
-            }
-        }
-    </style>
+.contact p {
+  margin: 12px 0;
+}
+
+footer {
+  background: #102d46;
+  color: white;
+  text-align: center;
+  padding: 22px;
+}
+
+@media (max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav a {
+    margin: 0 8px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h2>WindowCare</h2>
-        <nav>
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+  <h2>WindowCare Klaipeda</h2>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-    <section class="hero">
-        <h1>Windowcare-main.png</h1>
-        <p>Professional Window & Door Repair</p>
-        <a href="#contact" class="button">Get a Free Quote</a>
-    </section>
+<section class="hero">
+  <img src="windowcare-main.png"
+       alt="Modern aluminium windows and glass doors">
 
-    <section class="services" id="services">
-        <h2>Our Services</h2>
+  <h1>Window & Door Experts in Klaipeda</h1>
+  <p>Professional Window, Aluminium Door & Facade Repair</p>
+  <a href="#contact" class="button">Get a Free Quote</a>
+</section>
 
-        <div class="cards">
-            <div class="card">
-                <h3>Window Repair</h3>
-                <p>Professional window repair and maintenance.</p>
-            </div>
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
 
-            <div class="card">
-                <h3>Door Repair</h3>
-                <p>Reliable door repair and adjustment.</p>
-            </div>
+  <div class="cards">
+    <div class="card">
+      <h3>Window Repair</h3>
+      <p>Professional window repair and maintenance.</p>
+    </div>
 
-            <div class="card">
-                <h3>Window Adjustment</h3>
-                <p>Improve sealing and window performance.</p>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+      <h3>Door Repair</h3>
+      <p>Adjustment and repair of aluminium and PVC doors.</p>
+    </div>
 
-    <footer id="contact">
-        <p>WindowCare Klaipeda</p>
-        <p>Professional Window & Door Services</p>
-    </footer>
+    <div class="card">
+      <h3>Window Adjustment</h3>
+      <p>Improve window closing, alignment and performance.</p>
+    </div>
+
+    <div class="card">
+      <h3>Seals & Hardware</h3>
+      <p>Replacement of worn seals and window hardware.</p>
+    </div>
+
+    <div class="card">
+      <h3>Glass Units</h3>
+      <p>Glass unit replacement and inspection.</p>
+    </div>
+
+    <div class="card">
+      <h3>Aluminium Facades</h3>
+      <p>Maintenance and repair of aluminium structures.</p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2 class="section-title">About WindowCare</h2>
+  <p>
+    We provide professional window and door repair services
+    in Klaipeda, Lithuania. Quality work and reliable service
+    are our priorities.
+  </p>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p>Need help with your windows or doors?</p>
+  <p>Contact us to request a free estimate.</p>
+  <a href="mailto:your-email@example.com" class="button">
+    Send an Email
+  </a>
+  <p>Phone: Add your phone number</p>
+  <p>Klaipeda, Lithuania</p>
+</section>
+
+<footer>
+  <p>© 2026 WindowCare Klaipeda. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
+
